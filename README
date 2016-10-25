@@ -1,0 +1,76 @@
+This is the Orange Pi Linux system build script.
+You can use this script to compile the Linux system that can run on the Orange Pi.
+
+==================================================================================
+Usage method :
+	make targets [Options]
+
+generic targets:
+  kernel	- Build the kernel
+  uboot		- Build the uboot
+  rootfs	- Build debian & ubuntu file system
+  clean 
+  image			[sdcard=/dev/sdX] - Build SDcard image and partition
+  install_uboot		[sdcard=/dev/sdX] - Install uboot to SDcard
+  install_kernel	[sdcard=/dev/sdX] - Install kernel to SDcard
+  install_rootfs	[sdcard=/dev/sdX] - Install rootfs to SDcard
+  update_uboot 		[sdcard=/dev/sdX] - update uboot to SDcard
+  update_kernel		[sdcard=/dev/sdX] - update kernel to SDcard
+
+Configuration targets:
+  config_uboot      - menuconfig uboot
+  config_kernel		- menuconfig kernel
+
+Example:
+
+	make kernel 
+	make uboot
+	make rootfs 
+	make image sdcard=/dev/sdX
+	make install_uboot sdcard=/dev/sdX
+	make install_kernel sdcard=/dev/sdX
+	make install_rootfs sdcard=/dev/sdX
+
+
+
+=====================================================================================
+This directory contains the source code , compile tool and config file  for orange pi.
+>>>>>>>>>>>>>>>>>>
+Directory Hierarchy :
+	/ 	sdk root Directory
+	+--/config 
+	|	+--/apt-source				
+	|   +--/sunxi-script		
+	|   +--/u-boot-script
+	|   +--/u-boot_defconfig		#u-boot config file
+	|	+--/kernel_defconfig		#kerbel config file
+	|
+	+--/doc   AW-H3 Document 
+	|
+	+--/source
+	|	+--/linux-*		#linux source
+	|	+--/u-boot-*	#u-boot source
+	|	+--/busybox-*	#busybox source
+	|	+--/u-boot-script
+	|	+--/sunxi-script
+	|
+	+--/script
+	|	+--/orangepi.conf
+	|	+--/common.sh
+	|
+	+--/toolchain
+	|	+--/gcc-linaro
+	|	+--/sunxi-tools
+	|
+	+--/output
+	|	+--/dtb
+	|	+--/kernel
+	|	+--/rootfs
+	|	+--/sdcard
+	|	+--/u-boot
+	|
+	+--/Makefile
+	+--/ERADME
+
+<<<<<<<<<<<<<<<<<<<<<<
+==============================================================================
